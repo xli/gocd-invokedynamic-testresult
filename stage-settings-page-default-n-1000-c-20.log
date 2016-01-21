@@ -1,0 +1,42 @@
+This is ApacheBench, Version 2.3 <$Revision: 1663405 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking localhost (be patient)
+
+
+Server Software:        
+Server Hostname:        localhost
+Server Port:            8153
+
+Document Path:          /go/admin/pipelines/aaaaa/stages/defaultStage/settings
+Document Length:        14076 bytes
+
+Concurrency Level:      20
+Time taken for tests:   2.145 seconds
+Complete requests:      1000
+Failed requests:        0
+Total transferred:      14632980 bytes
+HTML transferred:       14076000 bytes
+Requests per second:    466.20 [#/sec] (mean)
+Time per request:       42.900 [ms] (mean)
+Time per request:       2.145 [ms] (mean, across all concurrent requests)
+Transfer rate:          6662.06 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.6      0       8
+Processing:    10   42  30.6     33     221
+Waiting:       10   42  30.3     32     221
+Total:         10   43  30.6     33     221
+
+Percentage of the requests served within a certain time (ms)
+  50%     33
+  66%     47
+  75%     56
+  80%     63
+  90%     81
+  95%    104
+  98%    127
+  99%    157
+ 100%    221 (longest request)
