@@ -30,39 +30,41 @@ Test pages:
 
 Test result:
 
-##### /pipelines.json, 1000 requests, 20 concurrency:
-
-| JRuby invoke dynamic | Time taken for tests | Time per request (mean) |
-|----------------------|----------------------|-------------------------|
-| off                  | 0.996 sec            | 19.9ms                  |
-| on                   | 1.59 sec             | 31.8ms                  |
-
-
 ##### /go/admin/pipelines/<pipelinename>/stages/defaultStage/settings, 1000 requests, 20 concurrency: 
 
 | JRuby invoke dynamic | Time taken for tests | Time per request (mean) |
 |----------------------|----------------------|-------------------------|
-| off                  | 1.122 sec            | 22.438ms                |
-| on                   | 2.145 sec            | 42.9ms                  |
+| off                  | 1.067 sec            | 21.345ms                |
+| on                   | 3.775 sec            | 75.510ms                |
 
 
-##### /pipelines.json, 1000 requests, 1 concurrency: 
+##### /pipelines.json, 1000 requests, 20 concurrency:
 
 | JRuby invoke dynamic | Time taken for tests | Time per request (mean) |
 |----------------------|----------------------|-------------------------|
-| off                  | 4.346 sec            | 4.346ms                 |
-| on                   | 5.928 sec            | 5.928ms                 |
+| off                  | 0.945 sec            | 18.898ms                |
+| on                   | 1.205 sec            | 24.095ms                |
 
 
 ##### /go/admin/pipelines/<pipelinename>/stages/defaultStage/settings, 1000 requests, 1 concurrency: 
 
 | JRuby invoke dynamic | Time taken for tests | Time per request (mean) |
 |----------------------|----------------------|-------------------------|
-| off                  | 4.772 sec            | 4.772ms                 |
-| on                   | 10.714 sec           | 10.714ms                |
+| off                  | 4.852 sec            | 4.852ms                 |
+| on                   | 9.800 sec            | 9.800ms                 |
+
+##### /pipelines.json, 1000 requests, 1 concurrency: 
+
+| JRuby invoke dynamic | Time taken for tests | Time per request (mean) |
+|----------------------|----------------------|-------------------------|
+| off                  | 4.500 sec            | 4.500ms                 |
+| on                   | 5.222 sec            | 5.222ms                 |
+
 
 #### Others
 
-Another noticable performance difference in test is JVM warm-up speed. It was a lot faster to get stable response time when JRuby invoke dynamic is off.
+Another noticable performance difference in test is JVM warm-up speed. 
+There is almost no warm-up need when invoke dynamic is off. 
+During the test, I need do 30,000 requests to warm-up JVM when invokedynamic is on.
 
 You can go to https://github.com/xli/gocd-invokedynamic-testresult to checkout full AB test reports mentioned above

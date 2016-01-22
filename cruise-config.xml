@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cruise xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="cruise-config.xsd" schemaVersion="77">
+  <server artifactsdir="artifacts" commandRepositoryLocation="default" serverId="87582570-4bf4-45d8-a043-295fbc05706f" />
+  <pipelines group="defaultGroup">
+    <pipeline name="hello">
+      <materials>
+        <git url="https://github.com/ThoughtWorksStudios/piece.git" />
+      </materials>
+      <stage name="defaultStage">
+        <jobs>
+          <job name="defaultJob">
+            <tasks>
+              <rake />
+            </tasks>
+          </job>
+          <job name="job2">
+            <tasks>
+              <rake />
+            </tasks>
+          </job>
+          <job name="job3">
+            <tasks>
+              <rake />
+            </tasks>
+          </job>
+        </jobs>
+      </stage>
+      <stage name="stage2">
+        <jobs>
+          <job name="job1">
+            <tasks>
+              <rake />
+            </tasks>
+          </job>
+        </jobs>
+      </stage>
+    </pipeline>
+    <pipeline name="world" template="world-template">
+      <materials>
+        <git url="https://github.com/ThoughtWorksStudios/piece.git" />
+      </materials>
+    </pipeline>
+    <pipeline name="world2" template="world-template">
+      <materials>
+        <git url="https://github.com/ThoughtWorksStudios/piece.git" />
+      </materials>
+    </pipeline>
+    <pipeline name="world3" template="world-template">
+      <materials>
+        <git url="https://github.com/ThoughtWorksStudios/piece.git" />
+      </materials>
+    </pipeline>
+    <pipeline name="world4" template="world-template">
+      <materials>
+        <git url="https://github.com/ThoughtWorksStudios/piece.git" />
+      </materials>
+    </pipeline>
+  </pipelines>
+  <templates>
+    <pipeline name="world-template">
+      <stage name="defaultStage">
+        <jobs>
+          <job name="defaultJob">
+            <tasks>
+              <rake />
+            </tasks>
+          </job>
+        </jobs>
+      </stage>
+    </pipeline>
+  </templates>
+  <agents>
+    <agent hostname="xiao.local" ipaddress="10.19.22.168" uuid="918b613f-b7ae-42dc-900c-9685c77bc12a" />
+  </agents>
+</cruise>
+

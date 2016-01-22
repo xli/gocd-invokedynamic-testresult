@@ -9,35 +9,35 @@ Server Software:
 Server Hostname:        localhost
 Server Port:            8153
 
-Document Path:          /go/admin/pipelines/aaaaa/stages/defaultStage/settings
+Document Path:          /go/admin/pipelines/hello/stages/defaultStage/settings
 Document Length:        1266 bytes
 
 Concurrency Level:      20
-Time taken for tests:   1.122 seconds
+Time taken for tests:   1.067 seconds
 Complete requests:      1000
 Failed requests:        0
 Non-2xx responses:      1000
-Total transferred:      1603936 bytes
+Total transferred:      1603957 bytes
 HTML transferred:       1266000 bytes
-Requests per second:    891.35 [#/sec] (mean)
-Time per request:       22.438 [ms] (mean)
-Time per request:       1.122 [ms] (mean, across all concurrent requests)
-Transfer rate:          1396.17 [Kbytes/sec] received
+Requests per second:    936.99 [#/sec] (mean)
+Time per request:       21.345 [ms] (mean)
+Time per request:       1.067 [ms] (mean, across all concurrent requests)
+Transfer rate:          1467.67 [Kbytes/sec] received
 
 Connection Times (ms)
               min  mean[+/-sd] median   max
-Connect:        0    0   0.4      0       4
-Processing:     5   22  17.2     16     146
-Waiting:        5   22  17.2     16     146
-Total:          6   22  17.2     17     146
+Connect:        0    0   0.3      0       4
+Processing:     5   21  13.7     18      87
+Waiting:        5   21  13.7     18      87
+Total:          5   21  13.7     18      87
 
 Percentage of the requests served within a certain time (ms)
-  50%     17
+  50%     18
   66%     26
-  75%     32
-  80%     36
-  90%     48
-  95%     55
-  98%     66
-  99%     73
- 100%    146 (longest request)
+  75%     31
+  80%     34
+  90%     41
+  95%     47
+  98%     54
+  99%     58
+ 100%     87 (longest request)

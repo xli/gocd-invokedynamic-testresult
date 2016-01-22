@@ -10,33 +10,33 @@ Server Hostname:        localhost
 Server Port:            8153
 
 Document Path:          /go/pipelines.json
-Document Length:        31803 bytes
+Document Length:        33945 bytes
 
 Concurrency Level:      1
-Time taken for tests:   5.928 seconds
+Time taken for tests:   5.222 seconds
 Complete requests:      1000
 Failed requests:        0
-Total transferred:      32366954 bytes
-HTML transferred:       31803000 bytes
-Requests per second:    168.69 [#/sec] (mean)
-Time per request:       5.928 [ms] (mean)
-Time per request:       5.928 [ms] (mean, across all concurrent requests)
-Transfer rate:          5332.13 [Kbytes/sec] received
+Total transferred:      34508925 bytes
+HTML transferred:       33945000 bytes
+Requests per second:    191.51 [#/sec] (mean)
+Time per request:       5.222 [ms] (mean)
+Time per request:       5.222 [ms] (mean, across all concurrent requests)
+Transfer rate:          6453.96 [Kbytes/sec] received
 
 Connection Times (ms)
               min  mean[+/-sd] median   max
-Connect:        0    0   0.1      0       3
-Processing:     4    6   3.0      5      84
-Waiting:        4    6   3.0      5      84
-Total:          4    6   3.0      5      84
+Connect:        0    0   0.0      0       1
+Processing:     4    5   4.2      4     127
+Waiting:        4    5   4.2      4     127
+Total:          4    5   4.2      4     128
 
 Percentage of the requests served within a certain time (ms)
-  50%      5
-  66%      6
-  75%      6
+  50%      4
+  66%      5
+  75%      5
   80%      6
   90%      7
   95%      8
-  98%     11
-  99%     13
- 100%     84 (longest request)
+  98%     10
+  99%     12
+ 100%    128 (longest request)
