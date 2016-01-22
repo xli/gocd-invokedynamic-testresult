@@ -1,6 +1,6 @@
 #### What is JRuby InvokeDynamic?
 
-JRuby InvokeDynamic is designed for improving performance, however, what I observed in in real environment (especially running Rails) was decreasing performance.
+JRuby InvokeDynamic is designed for improving performance, however, what I observed in real environment (especially running Rails) was decreasing performance.
 
 You can enable invokedynamic use on Java 7, but it is disabled normally due to JVM issues. On Java 8 builds, it is enabled by default.
 
@@ -8,13 +8,13 @@ see https://github.com/jruby/jruby/wiki/PerformanceTuning for more details
 
 #### How to turn it off for Go server
 
-BY JAVA OPTIONS: -Djruby.compile.invokedynamic=false
+By Java options: -Djruby.compile.invokedynamic=false
 
 #### Performance test
 
 Test environment:
 
-* Standalone Go server with some simple configured pipelines: 5 simple pipelines configured (see [config](https://github.com/xli/gocd-invokedynamic-testresult/blob/master/cruise-config.xml))
+* Standalone Go server with some simple configured pipelines: 5 simple pipelines configured (see [Go server config](https://github.com/xli/gocd-invokedynamic-testresult/blob/master/cruise-config.xml))
 * One Agent connected to server, and no job is scheduled. All pipelines built once and green.
 * Go server is built from latest master branch
 * Java version: 1.8.0_40
@@ -71,8 +71,17 @@ command: ab -n 1000 -c 1 http://localhost:8153/go/pipelines.json
 
 #### Others
 
-Another noticable performance difference in test is JVM warm-up speed. 
-There is almost no warm-up need when invoke dynamic is off. 
-During the test, I need do 30,000 requests to warm-up JVM when invokedynamic is on.
+Another noticable performance difference in test is JVM warm-up speed. It was a lot faster to get stable response time when JRuby invoke dynamic is off.
 
 You can go to https://github.com/xli/gocd-invokedynamic-testresult to checkout full AB test reports mentioned above
+
+I only give 2 page tests result above for comparison. 
+But most of pages should have similar performance difference with pipelines.json request.
+
+#### Conclusion
+
+Turning off JRuby invoke dynamic feature on Java 8 has significant performance improvement.
+More and more Go user will move to Java 8 as Oracle Java 7 no longer has public updates anymore.
+So we should turn it off by default on Go Server.
+
+
